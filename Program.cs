@@ -11,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddControllersWithViews();
+
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IShiftService, ShiftService>();
 builder.Services.AddScoped<IGenerateShiftService, GenerateShiftService>();

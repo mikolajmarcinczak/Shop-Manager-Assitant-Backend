@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shop_Manager_Assitant_Backend.ModelsDTO;
 using Shop_Manager_Assitant_Backend.Services.Interfaces;
 
 namespace Shop_Manager_Assitant_Backend.Controllers

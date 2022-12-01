@@ -5,6 +5,11 @@ using Shop_Manager_Assitant_Backend.Services.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(o => o.AddDefaultPolicy(c =>
+{
+    c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+}));
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,7 +23,7 @@ builder.Services.AddScoped<IShiftService, ShiftService>();
 builder.Services.AddScoped<IGenerateShiftService, GenerateShiftService>();
 builder.Services.AddScoped<IIndicatorsService, IndicatorsService>();
 builder.Services.AddScoped<IStatisticsService, StatisticsService>();
-builder.Services.AddScoped<ShiftAssistanceContext, ShiftAssistanceContext>();
+builder.Services.AddSingleton<ShiftAssistanceContext, ShiftAssistanceContext>();
 
 var app = builder.Build();
 
@@ -28,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

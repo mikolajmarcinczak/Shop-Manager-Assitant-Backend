@@ -8,10 +8,10 @@ namespace Shop_Manager_Assitant_Backend.Services
     public class StatisticsService : IStatisticsService
     {
         private readonly ShiftAssistanceContext _context;
-        private readonly IndicatorsService _indicators;
+        private readonly IIndicatorsService _indicators;
 
         public StatisticsService(ShiftAssistanceContext context,
-                                 IndicatorsService indicators)
+                                 IIndicatorsService indicators)
         {
             _context = context;
             _indicators = indicators;

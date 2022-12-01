@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop_Manager_Assitant_Backend.Model;
 using Shop_Manager_Assitant_Backend.ModelsDTO;
+using Shop_Manager_Assitant_Backend.Services.Interfaces;
 
 namespace Shop_Manager_Assitant_Backend.Services
 {
-    public class StatisticsService
+    public class StatisticsService : IStatisticsService
     {
         private readonly ShiftAssistanceContext _context;
         private readonly IndicatorsService _indicators;

@@ -16,6 +16,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IShiftService, ShiftService>();
 builder.Services.AddScoped<IGenerateShiftService, GenerateShiftService>();
+builder.Services.AddScoped<IIndicatorsService, IndicatorsService>();
+builder.Services.AddScoped<IStatisticsService, StatisticsService>();
 builder.Services.AddScoped<ShiftAssistanceContext, ShiftAssistanceContext>();
 
 var app = builder.Build();

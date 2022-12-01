@@ -17,5 +17,11 @@ namespace Shop_Manager_Assitant_Backend.Controllers
         {
             return Json(_statistics.GetBestShifts().BestShifts);
         }
+
+        [HttpGet]
+        public ActionResult ShowBestUser(int cityId)
+        {
+            return Json(_statistics.GetBestUsersByCity(cityId).BestUsers);
+        }
     }
 }
